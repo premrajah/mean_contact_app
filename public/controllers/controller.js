@@ -21,7 +21,8 @@ app.controller('AppCtrl', function($scope) {
   }
 
   var contactList = [person1, person2, person3];
-
   $scope.contactList = contactList;
+
+  console.log(contactList)
 });
 
