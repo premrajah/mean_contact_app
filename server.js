@@ -1,4 +1,4 @@
-var express  = require('express');
+var express = require('express');
 var app = express();
 var port = 3000;
 
@@ -9,7 +9,7 @@ var port = 3000;
 app.use(express.static(__dirname + "/public"));
 
 // GET REQUEST
-app.get('/contactlist', function(req, res){
+app.get('/contactlist', function (req, res) {
   console.log("Received a GET request");
 
   // Dummy data
