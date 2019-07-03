@@ -5,7 +5,7 @@ app.controller('AppCtrl', function ($scope, $http) {
 
   // route to get data from
   $http.get('/contactlist').then(function (response) {
-    console.log("Received requested Data");
+    console.log("Received requested GET Data");
 
     $scope.contactlist = response.data;
   });
@@ -13,7 +13,10 @@ app.controller('AppCtrl', function ($scope, $http) {
   $scope.addContact = function(){
     console.log($scope.contact);
 
-    $http.post('/contactlist', $scope.contact);
+    $http.post('/contactlist', $scope.contact).then(function(response){
+      console.log("Received requested POST data");
+      console.log(response.data);
+    });
   }
 
 

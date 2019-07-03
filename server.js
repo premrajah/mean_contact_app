@@ -28,6 +28,11 @@ app.get('/contactlist', function (req, res) {
 app.post('/contactlist', function(req, res) {
   console.log("Received a POST request");
   console.log(req.body);
+
+  // Insert data into mongodb
+  db.contactlist.insert(req.body, function(err, doc){
+    res.json(doc); // send this to controller
+  });
 });
 
 app.listen(port);
