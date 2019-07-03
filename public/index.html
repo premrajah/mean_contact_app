@@ -23,14 +23,13 @@
   <div class="container" ng-controller="AppCtrl">
     <h1>Contact List</h1>
 
-    <table class="table">
+    <table class="table table-striped">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Number</th>
-          <th>Action</th>
-          <th>&nbsp;</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Number</th>
+          <th scope="col" colspan="2">Actions</th>
         </tr>
       </thead>
 
@@ -42,7 +41,7 @@
           <td>
             <button class="btn btn-primary" ng-click="addContact()"><i class="fas fa-plus-square"></i> Add</button>
           </td>
-          <td><button class="btn btn-info" ng-click="update(contact._id)"><i class="fas fa-upload"></i> Update</button>
+          <td><button class="btn btn-info" ng-click="update()"><i class="fas fa-upload"></i> Update</button>
           </td>
         </tr>
         <tr ng-repeat="contact in contactlist">
