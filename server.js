@@ -1,5 +1,6 @@
 var express = require('express');
 var mongojs = require('mongojs');
+var bodyParser = require('body-parser');
 
 var app = express();
 var port = 3000;
@@ -10,6 +11,7 @@ var db = mongojs('contactlist', ['contactlist']);
 // });
 
 app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.json());
 
 // GET REQUEST
 app.get('/contactlist', function (req, res) {
@@ -20,6 +22,12 @@ app.get('/contactlist', function (req, res) {
     res.json(docs);
   });
 
+});
+
+// POST REQUEST
+app.post('/contactlist', function(req, res) {
+  console.log("Received a POST request");
+  console.log(req.body);
 });
 
 app.listen(port);
